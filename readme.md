@@ -72,8 +72,8 @@ Back-end Node.js
 =================================================
 
 =================================================<br/>
-3. Please refactor the code below to make it more concise, efficient and readable<br/>
-    with good logic flow.<br/>
+3. Please refactor the code below to make it more concise, efficient and readable with good logic flow.
+
     ```
         function findFirstStringInBracket(str) {
             if (str.length > 0) {
@@ -101,16 +101,17 @@ Back-end Node.js
             }
         }
     ```
+
     Answer:
-    => function findFirstStringInBracket(str){
-            const indexFirstBracketFound = str.indexOf("(");
-            const strAfterSlice = str.substring(indexFirstBracketFound, str.length)
-            const indexClosingBracketFound = strAfterSlice.indexOf(")");
-            if(indexFirstBracketFound>-1 && indexClosingBracketFound>-1 && indexClosingBracketFound!=1){
-                return strAfterSlice.substring(indexFirstBracketFound, indexClosingBracketFound);
-            }
-            return '';
-        } 
+        => function findFirstStringInBracket(str){
+                const indexFirstBracketFound = str.indexOf("(");
+                const strAfterSlice = str.substring(indexFirstBracketFound, str.length)
+                const indexClosingBracketFound = strAfterSlice.indexOf(")");
+                if(indexFirstBracketFound>-1 && indexClosingBracketFound>-1 && indexClosingBracketFound!=1){
+                    return strAfterSlice.substring(indexFirstBracketFound, indexClosingBracketFound);
+                }
+                return '';
+            } 
 =================================================
 
 =================================================<br/>
