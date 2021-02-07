@@ -25,8 +25,8 @@ Back-end Node.js
     *Kolom ParentUserName adalah UserName berdasarkan value Parent<br/>
 
     Answer:
-        => SELECT a.ID, a.UserName, b.UserName FROM USER a LEFT JOIN USER b on a.Parent = b.ID order by a.UserName asc
-=================================================
+            SELECT a.ID, a.UserName, b.UserName FROM USER a LEFT JOIN USER b on a.Parent = b.ID order by a.UserName asc<br/>
+=================================================<br/>
 
 =================================================<br/>
 2. Please write a small ExpressJS server to search movies from<br/>
