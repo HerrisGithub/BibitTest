@@ -74,7 +74,7 @@ Back-end Node.js
 =================================================<br/>
 3. Please refactor the code below to make it more concise, efficient and readable<br/>
     with good logic flow.<br/>
-    Code :
+    ```
         function findFirstStringInBracket(str) {
             if (str.length > 0) {
                 let indexFirstBracketFound = str.indexOf("(");
@@ -100,7 +100,7 @@ Back-end Node.js
                 return '';
             }
         }
-        
+    ```
     Answer:
     => function findFirstStringInBracket(str){
             const indexFirstBracketFound = str.indexOf("(");
