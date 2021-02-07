@@ -74,32 +74,33 @@ Back-end Node.js
 =================================================<br/>
 3. Please refactor the code below to make it more concise, efficient and readable<br/>
     with good logic flow.<br/>
-    function findFirstStringInBracket(str) {
-        if (str.length > 0) {
-            let indexFirstBracketFound = str.indexOf("(");
-            if (indexFirstBracketFound >= 0) {
-            let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
-            if (wordsAfterFirstBracket) {
-                wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);
-                let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");
-                if (indexClosingBracketFound >= 0) {
-                return wordsAfterFirstBracket.substring(0,
-                    indexClosingBracketFound);
+    Code :
+        function findFirstStringInBracket(str) {
+            if (str.length > 0) {
+                let indexFirstBracketFound = str.indexOf("(");
+                if (indexFirstBracketFound >= 0) {
+                let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
+                if (wordsAfterFirstBracket) {
+                    wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);
+                    let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");
+                    if (indexClosingBracketFound >= 0) {
+                    return wordsAfterFirstBracket.substring(0,
+                        indexClosingBracketFound);
+                    }
+                    else {
+                    return '';
+                    }
+                } else {
+                    return '';
                 }
-                else {
+                } else {
                 return '';
                 }
             } else {
                 return '';
             }
-            } else {
-            return '';
-            }
-        } else {
-            return '';
         }
-    }
-
+        
     Answer:
     => function findFirstStringInBracket(str){
             const indexFirstBracketFound = str.indexOf("(");
