@@ -74,43 +74,43 @@ Back-end Node.js
 
 =================================================
 3. Please refactor the code below to make it more concise, efficient and readable
-with good logic flow.
-function findFirstStringInBracket(str) {
-  if (str.length > 0) {
-    let indexFirstBracketFound = str.indexOf("(");
-    if (indexFirstBracketFound >= 0) {
-      let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
-      if (wordsAfterFirstBracket) {
-        wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);
-        let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");
-        if (indexClosingBracketFound >= 0) {
-          return wordsAfterFirstBracket.substring(0,
-            indexClosingBracketFound);
+    with good logic flow.
+    function findFirstStringInBracket(str) {
+    if (str.length > 0) {
+        let indexFirstBracketFound = str.indexOf("(");
+        if (indexFirstBracketFound >= 0) {
+        let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
+        if (wordsAfterFirstBracket) {
+            wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);
+            let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");
+            if (indexClosingBracketFound >= 0) {
+            return wordsAfterFirstBracket.substring(0,
+                indexClosingBracketFound);
+            }
+            else {
+            return '';
+            }
+        } else {
+            return '';
         }
-        else {
-          return '';
-        }
-      } else {
+        } else {
         return '';
-      }
+        }
     } else {
-      return '';
-    }
-  } else {
-    return '';
-  }
-}
-
-Answer:
-=> function findFirstStringInBracket(str){
-        const indexFirstBracketFound = str.indexOf("(");
-        const strAfterSlice = str.substring(indexFirstBracketFound, str.length)
-        const indexClosingBracketFound = strAfterSlice.indexOf(")");
-        if(indexFirstBracketFound>-1 && indexClosingBracketFound>-1 && indexClosingBracketFound!=1){
-            return strAfterSlice.substring(indexFirstBracketFound, indexClosingBracketFound);
-        }
         return '';
-    } 
+    }
+    }
+
+    Answer:
+    => function findFirstStringInBracket(str){
+            const indexFirstBracketFound = str.indexOf("(");
+            const strAfterSlice = str.substring(indexFirstBracketFound, str.length)
+            const indexClosingBracketFound = strAfterSlice.indexOf(")");
+            if(indexFirstBracketFound>-1 && indexClosingBracketFound>-1 && indexClosingBracketFound!=1){
+                return strAfterSlice.substring(indexFirstBracketFound, indexClosingBracketFound);
+            }
+            return '';
+        } 
 =================================================
 
 =================================================
