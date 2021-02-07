@@ -28,7 +28,7 @@ Back-end Node.js
         => SELECT a.ID, a.UserName, b.UserName FROM USER a LEFT JOIN USER b on a.Parent = b.ID order by a.UserName asc
 =================================================
 
-=================================================
+=================================================<br/>
 2. Please write a small ExpressJS server to search movies from<br/>
     http://www.omdbapi.com/<br/>
     The Backend should :<br/>
@@ -74,31 +74,31 @@ Back-end Node.js
 =================================================<br/>
 3. Please refactor the code below to make it more concise, efficient and readable<br/>
     with good logic flow.<br/>
-    function findFirstStringInBracket(str) {<br/>
-    if (str.length > 0) {<br/>
-        let indexFirstBracketFound = str.indexOf("(");<br/>
-        if (indexFirstBracketFound >= 0) {<br/>
-        let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);<br/>
-        if (wordsAfterFirstBracket) {<br/>
-            wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);<br/>
-            let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");<br/>
-            if (indexClosingBracketFound >= 0) {<br/>
-            return wordsAfterFirstBracket.substring(0,<br/>
-                indexClosingBracketFound);<br/>
-            }<br/>
-            else {<br/>
-            return '';<br/>
-            }<br/>
-        } else {<br/>
-            return '';<br/>
-        }<br/>
-        } else {<br/>
-        return '';<br/>
-        }<br/>
-    } else {<br/>
-        return '';<br/>
-    }<br/>
-    }<br/>
+    function findFirstStringInBracket(str) {
+        if (str.length > 0) {
+            let indexFirstBracketFound = str.indexOf("(");
+            if (indexFirstBracketFound >= 0) {
+            let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
+            if (wordsAfterFirstBracket) {
+                wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);
+                let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");
+                if (indexClosingBracketFound >= 0) {
+                return wordsAfterFirstBracket.substring(0,
+                    indexClosingBracketFound);
+                }
+                else {
+                return '';
+                }
+            } else {
+                return '';
+            }
+            } else {
+            return '';
+            }
+        } else {
+            return '';
+        }
+    }
 
     Answer:
     => function findFirstStringInBracket(str){
