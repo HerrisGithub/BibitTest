@@ -1,0 +1,52 @@
+{
+  "name": "movie-tracking",
+  "version": "1.0.0",
+  "description": "clean-architecture",
+  "main": "index.js",
+  "scripts": {
+    "deploy": "cross-env NODE_ENV=production pm2 start ./src/assemble.js --name 'server-name-here' -i 2",
+    "dev": "cross-env NODE_ENV=development nodemon ./src/assemble.js",
+    "start": "cross-env NODE_ENV=production node ./src/assemble.js",
+    "test": "cross-env NODE_ENV=development NODE_TEST=true mocha test/**/*/*.js --timeout 60000 --exit"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/omnipede/expressjs-clean-architecture.git"
+  },
+  "keywords": [
+    "clean-architecture",
+    "node.js",
+    "express.js"
+  ],
+  "author": "Herris Suhendra",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/omnipede/expressjs-clean-architecture/issues"
+  },
+  "homepage": "https://github.com/omnipede/expressjs-clean-architecture#readme",
+  "devDependencies": {
+    "eslint": "^7.2.0",
+    "eslint-config-airbnb-base": "^14.2.0",
+    "eslint-plugin-import": "^2.22.0"
+  },
+  "dependencies": {
+    "@hapi/joi": "^17.1.1",
+    "axios": "^0.21.1",
+    "body-parser": "^1.19.0",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "cross-env": "^7.0.2",
+    "express": "^4.17.1",
+    "express-pino-logger": "^5.0.0",
+    "express-request-id": "^1.4.1",
+    "mocha": "^8.0.1",
+    "mysql2": "^2.1.0",
+    "nodemon": "^2.0.4",
+    "pg": "^8.5.1",
+    "pino": "^6.3.2",
+    "pino-pretty": "^4.0.1",
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sequelize": "^6.3.1"
+  }
+}
