@@ -2,57 +2,56 @@ Back-end Node.js
 ============================
 
 =============================================
-1. Simple Database querying
-    Terdapat sebuah table "USER" yg memiliki 3 kolom: ID, UserName, Parent. Di mana:
-    Kolom ID adalah Primary Key
-    Kolom UserName adalah Nama User
-    Kolom Parent adalah ID dari User yang menjadi Creator untuk User tertentu.
-    eg.
-    ——————————————————————————
-    | ID | UserName | Parent |
-    ——————————————————————————
-    | 1 | Ali | 2 |
-    | 2 | Budi | 0 |
-    | 3 | Cecep | 1 |
-    —————————————————————————-
-    Tuliskan SQL Query untuk mendapatkan data berisi:
-    ———————————————————————————————————————————
-    | ID | UserName | ParentUserName |
-    ———————————————————————————————————————————
-    | 1 | Ali | Budi |
-    | 2 | Budi | NULL |
-    | 3 | Cecep | Ali |
-    ——————————————————————————————————
-    *Kolom ParentUserName adalah UserName berdasarkan value Parent
-    
+1. Simple Database querying<br/>
+    Terdapat sebuah table "USER" yg memiliki 3 kolom: ID, UserName, Parent. Di mana:<br/>
+    Kolom ID adalah Primary Key<br/>
+    Kolom UserName adalah Nama User<br/>
+    Kolom Parent adalah ID dari User yang menjadi Creator untuk User tertentu. eg.<br/>
+    ——————————————————————————<br/>
+    | ID | UserName | Parent |<br/>
+    ——————————————————————————<br/>
+    | 1 | Ali | 2 |<br/>
+    | 2 | Budi | 0 |<br/>
+    | 3 | Cecep | 1 |<br/>
+    —————————————————————————-<br/>
+    Tuliskan SQL Query untuk mendapatkan data berisi:<br/>
+    ———————————————————————————————————————————<br/>
+    | ID | UserName | ParentUserName |<br/>
+    ———————————————————————————————————————————<br/>
+    | 1 | Ali | Budi |<br/>
+    | 2 | Budi | NULL |<br/>
+    | 3 | Cecep | Ali |<br/>
+    ——————————————————————————————————<br/>
+    *Kolom ParentUserName adalah UserName berdasarkan value Parent<br/>
+
     Answer:
-    => SELECT a.ID, a.UserName, b.UserName FROM USER a LEFT JOIN USER b on a.Parent = b.ID order by a.UserName asc
+        => SELECT a.ID, a.UserName, b.UserName FROM USER a LEFT JOIN USER b on a.Parent = b.ID order by a.UserName asc
 =================================================
 
 =================================================
-2. Please write a small ExpressJS server to search movies from
-    http://www.omdbapi.com/
-    The Backend should :
-    - Have 2 endpoint named "/search" with GET method and "/detail" with GET method
-    (single movie detail)
-    Each API calls should be logged into a MySQL table, specifying DateTime, API
-    endpoint getting called and the parameters passed
-    - Contain access credential to call the API as such :
-    Key : "faf7e5bb&s"
-    URL : http://www.omdbapi.com/
-    * Example url call to search is --> GET
-    http://www.omdbapi.com/?apikey=faf7e5bb&s=Batman&page=2
-    - Be written in ExpressJS framework
-    Important aspects :
-    - Readability of code
-    - Good display on the knowledge of "Separation of Concerns for Codes"
-    - Write unit tests on some of the important files. Bigger plus points for complete unit
-    test cases
-    - Good use of asynchronousy
-    Plus points:
-    - Deploy your result to a public URL so we can check the result
-    - Implementation of Clean Architecture is a BIG plus
-    - Complete Unit tests
+2. Please write a small ExpressJS server to search movies from<br/>
+    http://www.omdbapi.com/<br/>
+    The Backend should :<br/>
+    - Have 2 endpoint named "/search" with GET method and "/detail" with GET method<br/>
+    (single movie detail)<br/>
+    Each API calls should be logged into a MySQL table, specifying DateTime, API<br/>
+    endpoint getting called and the parameters passed<br/>
+    - Contain access credential to call the API as such :<br/>
+    Key : "faf7e5bb&s"<br/>
+    URL : http://www.omdbapi.com/<br/>
+    * Example url call to search is --> GET<br/>
+    http://www.omdbapi.com/?apikey=faf7e5bb&s=Batman&page=2<br/>
+    - Be written in ExpressJS framework<br/>
+    Important aspects :<br/>
+    - Readability of code<br/>
+    - Good display on the knowledge of "Separation of Concerns for Codes"<br/>
+    - Write unit tests on some of the important files. Bigger plus points for complete unit<br/>
+    test cases<br/>
+    - Good use of asynchronousy<br/>
+    Plus points:<br/>
+    - Deploy your result to a public URL so we can check the result<br/>
+    - Implementation of Clean Architecture is a BIG plus<br/>
+    - Complete Unit tests<br/>
 
     Answer:
         live demo: 
@@ -72,34 +71,34 @@ Back-end Node.js
 
 =================================================
 
-=================================================
-3. Please refactor the code below to make it more concise, efficient and readable
-    with good logic flow.
-    function findFirstStringInBracket(str) {
-    if (str.length > 0) {
-        let indexFirstBracketFound = str.indexOf("(");
-        if (indexFirstBracketFound >= 0) {
-        let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);
-        if (wordsAfterFirstBracket) {
-            wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);
-            let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");
-            if (indexClosingBracketFound >= 0) {
-            return wordsAfterFirstBracket.substring(0,
-                indexClosingBracketFound);
-            }
-            else {
-            return '';
-            }
-        } else {
-            return '';
-        }
-        } else {
-        return '';
-        }
-    } else {
-        return '';
-    }
-    }
+=================================================<br/>
+3. Please refactor the code below to make it more concise, efficient and readable<br/>
+    with good logic flow.<br/>
+    function findFirstStringInBracket(str) {<br/>
+    if (str.length > 0) {<br/>
+        let indexFirstBracketFound = str.indexOf("(");<br/>
+        if (indexFirstBracketFound >= 0) {<br/>
+        let wordsAfterFirstBracket = str.substr(indexFirstBracketFound);<br/>
+        if (wordsAfterFirstBracket) {<br/>
+            wordsAfterFirstBracket = wordsAfterFirstBracket.substr(1);<br/>
+            let indexClosingBracketFound = wordsAfterFirstBracket.indexOf(")");<br/>
+            if (indexClosingBracketFound >= 0) {<br/>
+            return wordsAfterFirstBracket.substring(0,<br/>
+                indexClosingBracketFound);<br/>
+            }<br/>
+            else {<br/>
+            return '';<br/>
+            }<br/>
+        } else {<br/>
+            return '';<br/>
+        }<br/>
+        } else {<br/>
+        return '';<br/>
+        }<br/>
+    } else {<br/>
+        return '';<br/>
+    }<br/>
+    }<br/>
 
     Answer:
     => function findFirstStringInBracket(str){
@@ -113,22 +112,22 @@ Back-end Node.js
         } 
 =================================================
 
-=================================================
-4. Logic Test
-    Anagram adalah istilah dimana suatu string jika dibolak balik ordernya maka akan
-    sama eg. 'aku' dan 'kua' adalah Anagram, 'aku' dan 'aka' bukan Anagram.
-    Dibawah ini ada array berisi sederetan Strings.
-    ['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua']
-    Silahkan kelompokkan/group kata-kata di dalamnya sesuai dengan kelompok
-    Anagramnya,
-    Catatan: tidak boleh menggunakan syntax es6 map, reduce, find, filter
-    # Expected Outputs
-    [
-    ["kita", "atik", "tika"],
+=================================================<br/>
+4. Logic Test<br/>
+    Anagram adalah istilah dimana suatu string jika dibolak balik ordernya maka akan<br/>
+    sama eg. 'aku' dan 'kua' adalah Anagram, 'aku' dan 'aka' bukan Anagram.<br/>
+    Dibawah ini ada array berisi sederetan Strings.<br/>
+    ['kita', 'atik', 'tika', 'aku', 'kia', 'makan', 'kua']<br/>
+    Silahkan kelompokkan/group kata-kata di dalamnya sesuai dengan kelompok<br/>
+    Anagramnya,<br/>
+    Catatan: tidak boleh menggunakan syntax es6 map, reduce, find, filter<br/>
+    # Expected Outputs<br/>
+    [<br/>
+    ["kita", "atik", "tika"],<br/>
     ["aku", "kua"],
-    ["makan"],
-    ["kia"]
-    ]
+    ["makan"],<br/>
+    ["kia"]<br/>
+    ]<br/>
 
     Answer:
     => function findAnagrams(list){
@@ -145,4 +144,3 @@ Back-end Node.js
         return tempAnagrams
     }
 =================================================
-
