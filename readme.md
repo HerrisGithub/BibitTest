@@ -106,7 +106,7 @@ Back-end Node.js
                 const indexFirstBracketFound = str.indexOf("(");
                 const strAfterSlice = str.substring(indexFirstBracketFound, str.length)
                 const indexClosingBracketFound = strAfterSlice.indexOf(")");
-                if(indexFirstBracketFound>-1 && indexClosingBracketFound>-1 && indexClosingBracketFound!=1){
+                if(indexFirstBracketFound>-1 && indexClosingBracketFound>1){
                     return strAfterSlice.substring(indexFirstBracketFound, indexClosingBracketFound);
                 }
                 return '';
